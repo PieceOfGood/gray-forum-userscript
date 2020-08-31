@@ -75,7 +75,6 @@
                     spoiler.dataset.prepareState = 1;
                 }
             });
-            
         });
 
         //  Стиллизация "серым" частей страницы
@@ -112,15 +111,16 @@
             node.style.background = dark_gray;
             node.querySelector("a").style.color = "white";
             const post_author = node.querySelector(".post-author");
+            if (!post_author) return;
             const user_title  = post_author.children[0].children[1];
             const user_status = post_author.children[0].children[2];
             const user_info   = (post_author.children[1].children[0] ? post_author.children[1].children[0].children[0] : null);
             let user_title_style = {};
-            if (user_title.textContent      === "Участник")      { user_title_style = {color: "lime", textShadow: "0 0 10px black"}}
-            else if (user_title.textContent === "Разработчик")   { user_title_style = {color: "cyan", textShadow: "0 0 10px darkorange"}}
-            else if (user_title.textContent === "Модератор")     { user_title_style = {color: "darkorange", textShadow: "0 0 10px cyan"}}
-            else if (user_title.textContent === "Администратор") { user_title_style = {color: "red", textShadow: "0 0 10px cyan"}}
-            else if (user_title.textContent === "Заблокирован")  { user_title_style = {textShadow: "0 0 10px white"}}
+            if (user_title.textContent      === "Участник")      { user_title_style = {color: "lime", textShadow: "0 0 10px black"} }
+            else if (user_title.textContent === "Разработчик")   { user_title_style = {color: "cyan", textShadow: "0 0 10px darkorange"} }
+            else if (user_title.textContent === "Модератор")     { user_title_style = {color: "darkorange", textShadow: "0 0 10px cyan"} }
+            else if (user_title.textContent === "Администратор") { user_title_style = {color: "red", textShadow: "0 0 10px cyan"} }
+            else if (user_title.textContent === "Заблокирован")  { user_title_style = {textShadow: "0 0 10px white"} }
             Object.assign(user_title.style, user_title_style);
             
             // Имя пользователя

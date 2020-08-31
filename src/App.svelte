@@ -58,15 +58,15 @@
 		<label title={"Если в системе установлен\nэтот шрифт, он будет применён\nк блоку с кодом."}>
 			FiraCode      <input type="checkbox" bind:checked={ $fira_code }>
 		</label>
-		<label title={"Включает нумерацию строк."}>
+		<label title={"Включает нумерацию строк\nв блоке 'code'."}>
 			Нумерация     <input type="checkbox" bind:checked={ $add_numbers }>
 		</label>
-		<label title={"Уменьшает дефолтную высоту\nблока [code] в два раза."}>
-			Высота [code] <input type="checkbox" bind:checked={ $old_height }>
+		<label title={"Уменьшает дефолтную высоту\nблока 'code' в два раза."}>
+			Высота 'code' <input type="checkbox" bind:checked={ $old_height }>
 		</label>
 		<!-- svelte-ignore a11y-no-onchange -->
 		<div id="code-themes">
-			<span style="white-space: nowrap;">Темы для [code]:</span>
+			<span style="white-space: nowrap;">Темы для 'code':</span>
 			<select bind:value={ $code_theme }>
 				{#each themes as theme}
 					<option value={ theme }>{ theme }</option>
